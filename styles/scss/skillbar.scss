@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+}
+
+$green: #00ff00;
+$greenMiddle: #008800;
+$greenDark: #006600;
+
+$red: #ff0000;
+$redMiddle: #880000;
+$redDark: #660000;
+
+$blue: #0000ff;
+$blueMiddle: #000088;
+$blueDark: #000066;
+
+$yellow: #ffff00;
+$yellowMiddle: #888800;
+$yellowDark: #666600;
+
+$orange: #ff8800;
+$orangeMiddle: #aa6600;
+$orangeDark: #883300;
+
+$lila: #ff00ff;
+$lilaMiddle: #880088;
+$lilaDark: #660066;
+
+$grey: #cccccc;
+$greyDark: #666666;
+
+.container {
+    width: 100%;
+    height: 50px;
+    background-color: #ddd;
+}
+
+.skills {
+    text-align: right;
+    padding-right: 20px;
+    line-height: 50px;
+    color: white;
+}
+
+@for $i from 1 through 5 {
+    $i: $i * 5;
+
+    .radius-#{$i} {
+        border-radius: $i + px;
+    }
+}
+
+@for $i from 1 through 20 {
+    $i: $i * 5;
+
+    .wh-#{$i}-50 {
+        width: $i + 0%;
+        height: 50px;
+    }
+}
+
+.wh-5-50 {
+    background-color: $green;
+}
+
+.wh-10-50 {
+    background-color: $greenMiddle;
+}
+
+.wh-15-50 {
+    background-color: $greenDark;
+}
+
+.wh-20-50 {
+    background-color: $red;
+}
+
+.wh-25-50 {
+    background-color: $redMiddle;
+}
+
+.wh-30-50 {
+    background-color: $redDark;
+}
+
+.wh-35-50 {
+    background-color: $blue;
+}
+
+.wh-40-50 {
+    background-color: $blueMiddle;
+}
+
+.wh-45-50 {
+    background-color: $blueDark;
+}
+
+.wh-50-50 {
+    background-color: $yellow;
+}
+
+.wh-55-50 {
+    background-color: $yellowMiddle;
+}
+
+.wh-60-50 {
+    background-color: $yellowDark;
+}
+
+.wh-65-50 {
+    background-color: $orange;
+}
+
+.wh-70-50 {
+    background-color: $orangeMiddle;
+}
+
+.wh-75-50 {
+    background-color: $orangeDark;
+}
+
+.wh-80-50 {
+    background-color: $lila;
+}
+
+.wh-85-50 {
+    background-color: $lilaMiddle;
+}
+
+.wh-90-50 {
+    background-color: $lilaDark;
+}
+
+.wh-95-50 {
+    background-color: $grey;
+}
+
+.wh-100-50 {
+    background-color: $greyDark;
+}

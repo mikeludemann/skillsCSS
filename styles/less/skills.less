@@ -1,0 +1,361 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:700);
+
+.size(@w, @h) {
+  height: @h;
+  width: @w;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: #ecf0f1;
+  color: #444;
+  font-family: 'Lato', Tahoma, Geneva, sans-serif;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.set-size {
+  font-size: 10em;
+}
+
+.charts-container:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+@bg: #34495e;
+@size: 1em;
+
+@green: #00ff00;
+@greenMiddle: #008800;
+@greenDark: #006600;
+
+@red: #ff0000;
+@redMiddle: #880000;
+@redDark: #660000;
+
+@blue: #0000ff;
+@blueMiddle: #000088;
+@blueDark: #000066;
+
+@yellow: #ffff00;
+@yellowMiddle: #888800;
+@yellowDark: #666600;
+
+@orange: #ff8800;
+@orangeMiddle: #aa6600;
+@orangeDark: #883300;
+
+@lila: #ff00ff;
+@lilaMiddle: #880088;
+@lilaDark: #660066;
+
+@grey: #cccccc;
+@greyDark: #666666;
+
+.pie-wrapper {
+  .size(@size, @size);
+  float: left;
+  margin: 15px;
+  position: relative;
+  
+  &:nth-child(3n+1) {
+    clear: both;
+  }
+
+  .pie {
+    .size(100%, 100%);
+    clip: rect(0, @size, @size, @size / 2);
+    left: 0;
+    position: absolute;
+    top: 0;
+
+    .half-circle {
+      .size(100%, 100%);
+      border: @size / 10 solid #3498db;
+      border-radius: 50%;
+      clip: rect(0, @size / 2, @size, 0);
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .label {
+    @font-size: @size / 4;
+    @font-size-redo: @size * 4;
+
+    background: @bg;
+    border-radius: 50%;
+    bottom: @font-size-redo / 10;
+    color: #ecf0f1;
+    cursor: default;
+    display: block;
+    font-size: @font-size;
+    left: @font-size-redo / 10;
+    line-height: @font-size-redo * .65;
+    position: absolute;
+    right: @font-size-redo / 10;
+    text-align: center;
+    top: @font-size-redo / 10;
+
+    .smaller {
+      color: #bdc3c7;
+      font-size: .45em;
+      padding-bottom: 20px;
+      vertical-align: super;
+    }
+  }
+
+  .shadow {
+    .size(100%, 100%);
+    border: @size / 10 solid #bdc3c7;
+    border-radius: 50%;
+  }
+
+  &.without {
+    .label {
+      background: none;
+      color: #7f8c8d;
+
+      .smaller {
+        color: #bdc3c7;
+      }
+    }
+  }
+
+  &.progress-5 {
+    .draw-progress(5, @green);
+  }
+
+  &.progress-10 {
+    .draw-progress(10, @greenMiddle);
+  }
+
+  &.progress-15 {
+    .draw-progress(15, @greenDark);
+  }
+
+  &.progress-20 {
+    .draw-progress(20, @red);
+  }
+
+  &.progress-25 {
+    .draw-progress(25, @redMiddle);
+  }
+
+  &.progress-30 {
+    .draw-progress(30, @redDark);
+  }
+
+  &.progress-35 {
+    .draw-progress(35, @blue);
+  }
+
+  &.progress-40 {
+    .draw-progress(40, @blueMiddle);
+  }
+
+  &.progress-45 {
+    .draw-progress(45, @blueDark);
+  }
+
+  &.progress-50 {
+    .draw-progress(50, @yellow);
+  }
+
+  &.progress-55 {
+    .draw-progress(55, @yellowMiddle);
+  }
+
+  &.progress-60 {
+    .draw-progress(60, @yellowDark);
+  }
+
+  &.progress-65 {
+    .draw-progress(65, @orange);
+  }
+
+  &.progress-70 {
+    .draw-progress(70, @orangeMiddle);
+  }
+
+  &.progress-75 {
+    .draw-progress(75, @orangeDark);
+  }
+
+  &.progress-80 {
+    .draw-progress(80, @lila);
+  }
+
+  &.progress-85 {
+    .draw-progress(85, @lilaMiddle);
+  }
+
+  &.progress-90 {
+    .draw-progress(90, @lilaDark);
+  }
+
+  &.progress-95 {
+    .draw-progress(95, @grey);
+  }
+
+  &.progress-100 {
+    .draw-progress(100, @greyDark);
+  }
+}
+
+.pie-wrapper--solid {
+    border-radius: 50%;
+    overflow: hidden;
+
+    &:before {
+        border-radius: 0 100% 100% 0 / 50%;
+        content: '';
+        display: block;
+        height: 100%;
+        margin-left: 50%;
+        transform-origin: left;
+    }
+    
+    .label {
+        background: transparent;
+    }
+  
+    &.progress-5 {
+        .draw-progress--solid(5, @green, @bg);
+    }
+
+    &.progress-10 {
+        .draw-progress--solid(10, @greenMiddle, @bg);
+    }
+
+    &.progress-15 {
+        .draw-progress--solid(15, @greenDark, @bg);
+    }
+
+    &.progress-20 {
+        .draw-progress--solid(20, @red, @bg);
+    }
+
+    &.progress-25 {
+        .draw-progress--solid(25, @redMiddle, @bg);
+    }
+
+    &.progress-30 {
+        .draw-progress--solid(30, @redDark, @bg);
+    }
+
+    &.progress-35 {
+        .draw-progress--solid(35, @blue, @bg);
+    }
+
+    &.progress-40 {
+        .draw-progress--solid(40, @blueMiddle, @bg);
+    }
+
+    &.progress-45 {
+        .draw-progress--solid(45, @blueDark, @bg);
+    }
+
+    &.progress-50 {
+        .draw-progress--solid(50, @yellow, @bg);
+    }
+
+    &.progress-55 {
+        .draw-progress--solid(55, @yellowMiddle, @bg);
+    }
+
+    &.progress-60 {
+        .draw-progress--solid(60, @yellowDark, @bg);
+    }
+
+    &.progress-65 {
+        .draw-progress--solid(65, @orange, @bg);
+    }
+
+    &.progress-70 {
+        .draw-progress--solid(70, @orangeMiddle, @bg);
+    }
+
+    &.progress-75 {
+        .draw-progress--solid(75, @orangeDark, @bg);
+    }
+
+    &.progress-80 {
+        .draw-progress--solid(80, @lila, @bg);
+    }
+
+    &.progress-85 {
+        .draw-progress--solid(85, @lilaMiddle, @bg);
+    }
+
+    &.progress-90 {
+        .draw-progress--solid(90, @lilaDark, @bg);
+    }
+
+    &.progress-95 {
+        .draw-progress--solid(95, @grey, @bg);
+    }
+
+    &.progress-100 {
+        .draw-progress--solid(100, @greyDark, @bg);
+    }
+  
+}
+
+.draw-progress(@progress, @color) when (@progress <= 50) {
+  .pie {
+    .right-side {
+      display: none;
+    }
+  }
+}
+
+.draw-progress(@progress, @color) when (@progress > 50) {
+  .pie {
+    clip: rect(auto, auto, auto, auto);
+
+    .right-side {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.draw-progress(@progress, @color) {
+  .pie {
+    .half-circle {
+      border-color: @color;
+    }
+
+    .left-side {
+      @rotate: @progress * 3.6;
+      transform: rotate(~'@{rotate}deg');
+    }
+  }
+}
+
+.draw-progress--solid(@progress, @color, @bg) when (@progress <= 50) {
+  &:before {
+    background: @bg;
+    transform: rotate((100 - (50 - @progress)) / 100 * 360deg * -1);
+  }
+}
+
+.draw-progress--solid(@progress, @color, @bg) when (@progress > 50) {
+  &:before {
+    background: @color;
+    transform: rotate((100 - @progress) / 100 * 360deg);
+  }
+}
+
+.draw-progress--solid(@progress, @color, @bg) {
+  background: linear-gradient(to right, @color 50%, @bg 50%);
+}
