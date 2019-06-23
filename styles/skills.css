@@ -26,8 +26,8 @@ body {
 }
 
 .pie-wrapper {
-	height: 1em;
-	width: 1em;
+	height: 5em;
+	width: 5em;
 	float: left;
 	margin: 15px;
 	position: relative;
@@ -64,9 +64,9 @@ body {
 	color: #ecf0f1;
 	cursor: default;
 	display: block;
-	font-size: 0.25em;
+	font-size: 12px;
 	left: 0.4em;
-	line-height: 2.6em;
+	line-height: 5em;
 	position: absolute;
 	right: 0.4em;
 	text-align: center;
